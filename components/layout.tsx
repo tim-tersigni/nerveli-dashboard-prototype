@@ -13,7 +13,7 @@ const Layout = ({ children }: Props) => {
     <div className={styles.container}>
       {children}
     </div>
-  ) 
+  )
 };
 
 export default Layout;
