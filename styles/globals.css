@@ -6,3 +6,6 @@
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
+body {
+  margin: 0px;
+}
