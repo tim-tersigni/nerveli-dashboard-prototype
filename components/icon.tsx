@@ -7,13 +7,13 @@ interface Props {
   alt: string;
   width: number;
   height: number;
-  isSelected: boolean;
+  isSelected?: boolean;
   onClick?: () => void;
 }
 
 const Icon: React.FC<Props> = ({ src, alt, width, height, isSelected, onClick }: Props) => {
   return(
-    <div className={`${styles.container} ${isSelected ? styles.selected : ''}`} onClick={onClick}>
+    <div className={styles.container}>
       <Image
         priority
         src={src}

@@ -9,3 +9,13 @@
 body {
   margin: 0px;
 }
+
+/* Remove global button styling */
+button {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+  cursor:pointer;
+}

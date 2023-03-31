@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
 import styles from './sidebar.module.css';
-import Icon from './icon'
 
 type Props = {
   icons: JSX.Element[];
@@ -8,7 +7,7 @@ type Props = {
 };
 
 const Sidebar = ({ icons, bottomIcons }: Props) => {
-  const [selectedIconIndex, setSelectedIconIndex] = useState<number | null>(null);
+  const [selectedIconIndex, setSelectedIconIndex] = useState<number | null>(0);
 
   const handleIconClick = (iconIndex: number) => {
     setSelectedIconIndex(iconIndex);
@@ -22,25 +21,29 @@ const Sidebar = ({ icons, bottomIcons }: Props) => {
             {/* Create div icons using map function with unique key as index */}
             {icons.map((icon, index) => (
               // Pass function to icons to update selected icon index for style change
-              <div
+              <button
                 key={index}
                 className={`${styles.icon} ${selectedIconIndex === index ? styles.selectedIcon : ''}`}
                 onClick={() => handleIconClick(index)}
+                type="button"
+                disabled={selectedIconIndex === index}
               >
                 {React.cloneElement(icon, { isSelected: selectedIconIndex === index })}
-              </div>
+              </button>
         ))}
         </div>
 
         <div className={styles.bottomIconsContainer}>
             {bottomIcons.map((icon, index) => (
-              <div
+              <button
                 key={bottomIconsStartIndex + index}
                 className={`${styles.icon} ${selectedIconIndex === bottomIconsStartIndex + index ? styles.selectedIcon : ''}`}
                 onClick={() => handleIconClick(bottomIconsStartIndex + index)}
+                type="button"
+                disabled={selectedIconIndex === index}
               >
                 {React.cloneElement(icon, { isSelected: selectedIconIndex === index })}
-              </div>
+              </button>
             ))}
         </div>
     </div>
