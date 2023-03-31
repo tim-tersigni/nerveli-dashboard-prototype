@@ -4,6 +4,8 @@ import styles from '@/styles/Home.module.css'
 import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
+import { profile } from 'console'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,15 +19,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        {/* <Image priority src="/images/dog.jpg" alt="a" height={10} width={10}/> */}
         <Sidebar 
-          icons={[
-            <Icon image="../icons/home-icon.svg" alt="Home"/>,
-            <Icon image="@/icons/profile-icon.svg" alt="Profile"/>,
-            <Icon image="@/icons/chat-icon.svg" alt="Messages"/>,
-          ]} 
-          bottomIcons={[
-            <Icon image="@/icons/gear-icon.svg" alt="Settings"/>
-          ]}/>
+            icons={[
+              <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35} />,
+              <Icon src='/images/profile-icon.svg' alt="Profile" width={35} height={35} />,
+              <Icon src='/images/chat-icon.svg' alt="Messages" width={35} height={35} />,
+            ]} 
+            bottomIcons={[
+              <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35} />,
+            ]}
+          />
       </main>
     </Layout>
   )
