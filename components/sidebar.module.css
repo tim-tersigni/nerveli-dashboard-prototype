@@ -15,3 +15,12 @@
     gap: 2rem;
     align-items: center;
 }
+
+/* Selected icon */
+.selectedIcon {
+    opacity: 1;
+  }
+  
+.icon:not(.selectedIcon) {
+    opacity: 0.49;
+}
