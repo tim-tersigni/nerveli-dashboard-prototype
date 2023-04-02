@@ -4,6 +4,7 @@ import styles from '@/styles/Home.module.css'
 import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
+import Card from '@/components/card'
 import { profile } from 'console'
 import Image from 'next/image'
 
@@ -36,9 +37,29 @@ export default function Home() {
                 border-radius: 10px;
                 width: 100%;
                 height: 100vh;
-              }
-            `}
+              }`}
             </style>
+
+            <div className={styles.grid}>
+              <Card title="Patient Info" body="words">
+                {" "}
+              </Card>
+              <Card title="Pain Management" body="words">
+                {" "}
+              </Card>
+              <Card title="Overview" body="words">
+                {" "}
+              </Card>
+              <Card title="Medication" body="words">
+                {" "}
+              </Card>
+              <Card title="Recent Activities" body="words">
+                {" "}
+              </Card>
+              <Card title="Physical Management" body="words">
+                {" "}
+              </Card>
+            </div>
         </div>
       </main>
     </Layout>
