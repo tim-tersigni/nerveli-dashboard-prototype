@@ -40,7 +40,7 @@ const Sidebar = ({ icons, bottomIcons }: Props) => {
                 className={`${styles.icon} ${selectedIconIndex === bottomIconsStartIndex + index ? styles.selectedIcon : ''}`}
                 onClick={() => handleIconClick(bottomIconsStartIndex + index)}
                 type="button"
-                disabled={selectedIconIndex === index}
+                disabled={selectedIconIndex === bottomIconsStartIndex + index}
               >
                 {React.cloneElement(icon, { isSelected: selectedIconIndex === index })}
               </button>
