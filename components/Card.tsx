@@ -1,5 +1,5 @@
 import React, {ReactNode} from "react";
-import styles from "../styles/Home.module.css";
+import styles from "./card.module.css";
 
 interface Props {
   title: string;
