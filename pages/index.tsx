@@ -19,7 +19,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        {/* <Image priority src="/images/dog.jpg" alt="a" height={10} width={10}/> */}
         <Sidebar 
             icons={[
               <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35}/>,
