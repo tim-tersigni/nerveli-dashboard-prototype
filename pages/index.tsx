@@ -30,16 +30,7 @@ export default function Home() {
               <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35}/>,
             ]}
           />
-        <div className='tmpMainContainer'>
-            <style jsx>{`
-              .tmpMainContainer{
-                background: #F8F8F8;
-                border-radius: 10px;
-                width: 100%;
-                height: 100vh;
-              }`}
-            </style>
-
+        <div className={styles.mainContainer}>
             <div className={styles.grid}>
               <Card title="Patient Info" body="words">
                 {" "}
