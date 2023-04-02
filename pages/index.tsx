@@ -31,26 +31,29 @@ export default function Home() {
             ]}
           />
         <div className={styles.mainContainer}>
-            <div className={styles.grid}>
-              <Card title="Patient Info" body="words">
-                {" "}
-              </Card>
-              <Card title="Pain Management" body="words">
-                {" "}
-              </Card>
-              <Card title="Overview" body="words">
-                {" "}
-              </Card>
-              <Card title="Medication" body="words">
-                {" "}
-              </Card>
-              <Card title="Recent Activities" body="words">
-                {" "}
-              </Card>
-              <Card title="Physical Management" body="words">
-                {" "}
-              </Card>
-            </div>
+          <div className={styles.sectionHeader}>
+            <h1>Patient Health Summary Dashboard</h1>
+          </div>
+          <div className={styles.grid}>
+            <Card title="Patient Info" body="words">
+              {" "}
+            </Card>
+            <Card title="Pain Management" body="words">
+              {" "}
+            </Card>
+            <Card title="Overview" body="words">
+              {" "}
+            </Card>
+            <Card title="Medication" body="words">
+              {" "}
+            </Card>
+            <Card title="Recent Activities" body="words">
+              {" "}
+            </Card>
+            <Card title="Physical Management" body="words">
+              {" "}
+            </Card>
+          </div>
         </div>
       </main>
     </Layout>

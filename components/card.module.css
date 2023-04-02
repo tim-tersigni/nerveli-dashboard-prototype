@@ -14,7 +14,6 @@
 .card h2 {
   font-weight: 600;
   margin-bottom: 0.7rem;
-  font-family: "Inter", sans-serif;
 }
 
 .card p {
@@ -24,7 +23,6 @@
   line-height: 1.5;
   max-width: 30ch;
   word-wrap: break-word;
-  font-family: "Inter", sans-serif;
 }
 
 /* Enable hover only on non-touch devices */
