@@ -4,7 +4,8 @@ import styles from '@/styles/Home.module.css'
 import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
-import Card from '@/components/card'
+import Card from '@/components/Card'
+import Button from '@/components/button'
 import { profile } from 'console'
 import Image from 'next/image'
 
@@ -33,6 +34,10 @@ export default function Home() {
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
+            <div className={styles.button}>
+              <Button label="+ Create" ></Button>
+            </div>
+            <Icon src='/images/chat-icon.svg' alt="Notification" width={35} height={35}/>
           </div>
           <div className={styles.grid}>
             <Card title="Patient Info" body="words">

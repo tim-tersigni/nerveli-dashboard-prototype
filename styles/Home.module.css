@@ -12,6 +12,23 @@
   height: 100vh;
 }
 
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background: rgba(var(--nerveli-green-rgb));  
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+  border-radius: 12px;
+  margin: auto auto;
+}
+
 .card {
   padding: 2rem 2.2rem;
   border-radius: var(--border-radius);
