@@ -1,31 +1,23 @@
-import React from "react";
-import styles from '@/styles/layout.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react';
+import styles from './icon.module.css';
 
-interface Props {
+type IconProps = {
   src: string;
   alt: string;
   width: number;
   height: number;
-  isSelected?: boolean;
-  onClick?: () => void;
   path: string;
-}
+  isSelected: boolean;
+  onClick?: () => void;
+};
 
-const Icon: React.FC<Props> = ({ src, alt, width, height, isSelected, onClick, path }: Props) => {
+const Icon = ({ src, alt, width, height, path, isSelected, onClick }: IconProps) => {
+  const activeStyle = isSelected ? styles.active : '';
+
   return (
-    <Link href={path}>
-      <div className={styles.container} onClick={onClick}>
-        <Image
-          priority
-          src={src}
-          height={height}
-          width={width}
-          alt={alt}
-        />
-      </div>
-    </Link>
+    <div className={`${styles.icon} ${activeStyle}`} onClick={onClick}>
+      <img src={src} alt={alt} width={width} height={height} />
+    </div>
   );
 };
 

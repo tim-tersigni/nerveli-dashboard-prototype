@@ -1,53 +1,46 @@
-import React, { ReactNode, useState } from "react";
-import styles from './sidebar.module.css';
+import React from "react";
+import styles from "./sidebar.module.css";
+import Icon from "./icon";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-type Props = {
-  icons: JSX.Element[];
-  bottomIcons: JSX.Element[];
+type IconProps = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  path: string;
 };
 
-const Sidebar = ({ icons, bottomIcons }: Props) => {
-  const [selectedIconIndex, setSelectedIconIndex] = useState<number | null>(0);
+const Sidebar = () => {
+  const router = useRouter();
 
-  const handleIconClick = (iconIndex: number) => {
-    setSelectedIconIndex(iconIndex);
-  };
-  
-  const bottomIconsStartIndex = icons.length;
+  const icons: IconProps[] = [
+    { src: "/images/home-icon.svg", alt: "Home", width: 35, height: 35, path: "/" },
+    { src: "/images/profile-icon.svg", alt: "Profile", width: 35, height: 35, path: "/patient" },
+    { src: "/images/chat-icon.svg", alt: "Messages", width: 35, height: 35, path: "/messages" },
+    { src: "/images/gear-icon.svg", alt: "Settings", width: 35, height: 35, path: "/settings" },
+  ];
 
-  return(
+  return (
     <div className={styles.sidebar}>
-        <div className={styles.iconsContainer}>
-            {/* Create div icons using map function with unique key as index */}
-            {icons.map((icon, index) => (
-              // Pass function to icons to update selected icon index for style change
-              <button
-                key={index}
-                className={`${styles.icon} ${selectedIconIndex === index ? styles.selectedIcon : ''}`}
-                onClick={() => handleIconClick(index)}
-                type="button"
-                disabled={selectedIconIndex === index}
-              >
-                {React.cloneElement(icon, { isSelected: selectedIconIndex === index })}
-              </button>
-        ))}
-        </div>
-
-        <div className={styles.bottomIconsContainer}>
-            {bottomIcons.map((icon, index) => (
-              <button
-                key={bottomIconsStartIndex + index}
-                className={`${styles.icon} ${selectedIconIndex === bottomIconsStartIndex + index ? styles.selectedIcon : ''}`}
-                onClick={() => handleIconClick(bottomIconsStartIndex + index)}
-                type="button"
-                disabled={selectedIconIndex === bottomIconsStartIndex + index}
-              >
-                {React.cloneElement(icon, { isSelected: selectedIconIndex === index })}
-              </button>
-            ))}
-        </div>
+      {icons.map((icon: IconProps) => {
+        const isSelected = router.asPath === icon.path;
+        return (
+          <Link key={icon.alt} href={icon.path}>
+            <Icon
+              src={icon.src}
+              alt={icon.alt}
+              width={icon.width}
+              height={icon.height}
+              path={icon.path}
+              isSelected={isSelected}
+            />
+          </Link>
+        );
+      })}
     </div>
-  )
+  );
 };
 
 export default Sidebar;

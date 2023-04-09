@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/layout.module.css'
 import Layout from '@/styles/layout'
-import SiteSidebar from '@/components/siteSidebar'
+import Sidebar from '@/components/sidebar'
 import Card from '@/components/card'
 import { profile } from 'console'
 import Image from 'next/image'
@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <SiteSidebar/>
+        <Sidebar/>
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Home</h1>

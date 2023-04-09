@@ -20,16 +20,7 @@ export default function Patient() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Sidebar 
-            icons={[
-              <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35} path='/'/>,
-              <Icon src='/images/profile-icon.svg' alt="Profile" width={35} height={35} path='patient'/>,
-              <Icon src='/images/chat-icon.svg' alt="Messages" width={35} height={35} path='messages'/>,
-            ]} 
-            bottomIcons={[
-              <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35} path='settings'/>,
-            ]}
-          />
+        <Sidebar/>
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
