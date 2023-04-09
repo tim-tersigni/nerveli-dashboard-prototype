@@ -27,7 +27,7 @@ const Sidebar = () => {
       {icons.map((icon: IconProps) => {
         const isSelected = router.asPath === icon.path;
         return (
-          <Link className={icon.alt === "Settings" ? styles.bottomIcon : ''} href={icon.path}>
+          <Link key={icon.path} className={icon.alt === "Settings" ? styles.bottomIcon : ''} href={icon.path}>
             <Icon
               src={icon.src}
               alt={icon.alt}

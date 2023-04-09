@@ -3,9 +3,6 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/layout.module.css'
 import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
-import Card from '@/components/card'
-import { profile } from 'console'
-import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
