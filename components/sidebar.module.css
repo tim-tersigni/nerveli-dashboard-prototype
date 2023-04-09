@@ -8,3 +8,7 @@
     height: 100vh;
     gap: 2rem;
 }
+
+.bottomIcon {
+    margin-top: auto;
+}
