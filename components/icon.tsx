@@ -12,6 +12,7 @@ type IconProps = {
 };
 
 const Icon = ({ src, alt, width, height, path, isSelected, onClick }: IconProps) => {
+  // If icon is selected it is assigned the active class name
   const activeStyle = isSelected ? styles.active : '';
 
   return (

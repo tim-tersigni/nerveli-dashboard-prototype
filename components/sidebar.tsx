@@ -15,6 +15,7 @@ type IconProps = {
 const Sidebar = () => {
   const router = useRouter();
 
+  // Define Icons for Sidebar Here
   const icons: IconProps[] = [
     { src: "/images/home-icon.svg", alt: "Home", width: 35, height: 35, path: "/" },
     { src: "/images/profile-icon.svg", alt: "Profile", width: 35, height: 35, path: "/patient" },
@@ -25,8 +26,10 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       {icons.map((icon: IconProps) => {
+        // Highlight selection if path matches icon alt text
         const isSelected = router.asPath === icon.path;
         return (
+          // Settings Icon is aligned to bottom
           <Link key={icon.path} className={icon.alt === "Settings" ? styles.bottomIcon : ''} href={icon.path}>
             <Icon
               src={icon.src}
