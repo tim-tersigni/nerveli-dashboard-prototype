@@ -5,8 +5,6 @@ import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
-import { profile } from 'console'
-import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
