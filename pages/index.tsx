@@ -5,7 +5,6 @@ import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/Card'
-import Button from '@/components/button'
 import { profile } from 'console'
 import Image from 'next/image'
 
@@ -35,9 +34,9 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
             <div className={styles.button}>
-              <Button label="+ Create" ></Button>
+              <button type="button" onClick={() => void 0}>+ Create</button>
             </div>
-            <Icon src='/images/chat-icon.svg' alt="Notification" width={35} height={35}/>
+            <Icon src='/images/notification-bell-icon.svg' alt="Notification" width={20} height={20} onClick={() => void 0}/>
           </div>
           <div className={styles.grid}>
             <Card title="Patient Info" body="words">

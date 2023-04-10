@@ -15,18 +15,19 @@
 .sectionHeader {
   display: flex;
   justify-content: space-between;
+  padding: 2rem;
 }
 
 .button {
   background: rgba(var(--nerveli-green-rgb));  
   border: none;
   color: white;
-  padding: 1px 1px;
-  text-align: center;
+  padding: 0.25rem 2rem;
+  text-align: left;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 12px;
-  margin: auto auto;
+  margin: auto auto auto auto;
 }
 
 .card {
