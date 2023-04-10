@@ -1,5 +1,5 @@
 .card {
-  padding: 2rem 2.2rem;
+  padding: 0 1.2rem 1rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 1);
   border: 1px solid rgba(var(--card-border-rgb), 0);
@@ -13,6 +13,7 @@
 
 .card h2 {
   font-weight: 600;
+  font-size: 14pt;
   margin-bottom: 0.7rem;
 }
 
