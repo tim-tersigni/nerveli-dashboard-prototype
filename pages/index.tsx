@@ -4,7 +4,7 @@ import styles from '@/styles/Home.module.css'
 import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
-import Card from '@/components/card'
+import Card from '@/components/Card'
 import { profile } from 'console'
 import Image from 'next/image'
 

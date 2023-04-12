@@ -1,26 +1,26 @@
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 18vh 2vw 9vh 2vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 18vh 2vw 9vh 2vw;
+  height: 100vh;
 }
 
 .iconsContainer,
 .bottomIconsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
 /* Selected icon */
 .selectedIcon {
-    opacity: 1;
-  }
-  
+  opacity: 1;
+}
+
 .icon:not(.selectedIcon) {
-    opacity: 0.49;
+  opacity: 0.49;
 }
