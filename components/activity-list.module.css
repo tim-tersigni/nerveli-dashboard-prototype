@@ -1,3 +1,40 @@
 .activityList {
-    list-style: none;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
 }
+
+.eventItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+}
+
+.eventMarker {
+  position: absolute;
+  top: 0.5rem;
+  width: 0.4rem;
+  height: calc(100% - 1rem);
+  border-radius: 4px;
+  background-color: rgba(var(--nerveli-light-green-rgb));; /* Change to the desired color */
+  margin-right: 16px;
+}
+
+.eventContent {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.eventContent h2 {
+  margin: 0;
+}
+
+.eventContent p{
+  margin: 0;
+  font-size: 14px;
+}
+

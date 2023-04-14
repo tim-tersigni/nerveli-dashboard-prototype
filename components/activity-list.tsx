@@ -26,12 +26,31 @@ const events = [
 
 function ActivityList() {
   return (
-    <Card title="Activity List">
+    <Card title="Recent Activities">
       <ul className={styles.activityList}>
         {events.map((event) => (
-          <li key={event.id}>
-            <p>{`${event.startDateTime.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at ${event.startDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })}-${event.endDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`}</p>
-            <p>{event.title}</p>
+          <li key={event.id} className={styles.eventItem}>
+            <div className={styles.eventMarker}></div>
+            <div className={styles.eventContent}>
+            <p>
+                {event.startDateTime.toLocaleString("en-US", {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                })}
+                {" at "}
+                {event.startDateTime.toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+                -
+                {event.endDateTime.toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </p>
+              <p className={styles.eventTitle}>{event.title}</p>
+            </div>
           </li>
         ))}
       </ul>
