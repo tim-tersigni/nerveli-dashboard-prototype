@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 
 interface Props {
   title: string;
-  body: string;
+  body?: string;
   children?: ReactNode;
 }
 

@@ -7,7 +7,7 @@ type IconProps = {
   width: number;
   height: number;
   path: string;
-  isSelected: boolean;
+  isSelected?: boolean;
   onClick?: () => void;
 };
 
