@@ -27,7 +27,7 @@ const events = [
 function ActivityList() {
   return (
     <Card title="Activity List">
-      <ul>
+      <ul className={styles.activityList}>
         {events.map((event) => (
           <li key={event.id}>
             <p>{`${event.startDateTime.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })} at ${event.startDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric' })}-${event.endDateTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`}</p>
