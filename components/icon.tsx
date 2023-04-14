@@ -7,6 +7,7 @@ interface Props {
   alt: string;
   width: number;
   height: number;
+  path: string;
   isSelected?: boolean;
   onClick?: () => void;
 }

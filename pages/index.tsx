@@ -5,6 +5,7 @@ import Layout from '@/components/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
+import ActivityList from '@/components/activity-list'
 import { profile } from 'console'
 import Image from 'next/image'
 
@@ -22,12 +23,12 @@ export default function Home() {
       <main className={styles.main}>
         <Sidebar 
             icons={[
-              <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35}/>,
-              <Icon src='/images/profile-icon.svg' alt="Profile" width={35} height={35}/>,
-              <Icon src='/images/chat-icon.svg' alt="Messages" width={35} height={35}/>,
+              <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35} path="google.com"/>,
+              <Icon src='/images/profile-icon.svg' alt="Profile" width={35} height={35} path="google.com"/>,
+              <Icon src='/images/chat-icon.svg' alt="Messages" width={35} height={35} path="google.com"/>,
             ]} 
             bottomIcons={[
-              <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35}/>,
+              <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35} path="google.com"/>,
             ]}
           />
         <div className={styles.mainContainer}>
@@ -47,9 +48,7 @@ export default function Home() {
             <Card title="Medication" body="words">
               {" "}
             </Card>
-            <Card title="Recent Activities" body="words">
-              {" "}
-            </Card>
+            <ActivityList/>
             <Card title="Physical Management" body="words">
               {" "}
             </Card>
