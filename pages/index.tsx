@@ -1,14 +1,15 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import Layout from '@/components/layout'
-import Sidebar from '@/components/sidebar'
-import Icon from '@/components/icon'
-import Card from '@/components/card'
-import { profile } from 'console'
-import Image from 'next/image'
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import Layout from "@/components/layout";
+import Sidebar from "@/components/sidebar";
+import Icon from "@/components/icon";
+import Card from "@/components/Card";
+import PatientProfile from "@/components/patient-profile";
+import { profile } from "console";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -20,16 +21,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Sidebar 
-            icons={[
-              <Icon src='/images/home-icon.svg' alt='Home' width={35} height={35}/>,
-              <Icon src='/images/profile-icon.svg' alt="Profile" width={35} height={35}/>,
-              <Icon src='/images/chat-icon.svg' alt="Messages" width={35} height={35}/>,
-            ]} 
-            bottomIcons={[
-              <Icon src='/images/gear-icon.svg' alt="Settings" width={35} height={35}/>,
-            ]}
-          />
+        <Sidebar
+          icons={[
+            <Icon
+              src="/images/home-icon.svg"
+              alt="Home"
+              width={35}
+              height={35}
+            />,
+            <Icon
+              src="/images/profile-icon.svg"
+              alt="Profile"
+              width={35}
+              height={35}
+            />,
+            <Icon
+              src="/images/chat-icon.svg"
+              alt="Messages"
+              width={35}
+              height={35}
+            />,
+          ]}
+          bottomIcons={[
+            <Icon
+              src="/images/gear-icon.svg"
+              alt="Settings"
+              width={35}
+              height={35}
+            />,
+          ]}
+        />
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
@@ -38,6 +59,8 @@ export default function Home() {
             <Card title="Patient Info" body="words">
               {" "}
             </Card>
+            <PatientProfile />
+
             <Card title="Pain Management" body="words">
               {" "}
             </Card>
@@ -57,5 +80,5 @@ export default function Home() {
         </div>
       </main>
     </Layout>
-  )
+  );
 }

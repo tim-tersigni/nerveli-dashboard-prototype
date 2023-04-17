@@ -1,13 +1,13 @@
-import React, {ReactNode} from "react";
-import styles from "./card.module.css";
+import React, { ReactNode } from "react";
+import styles from "../styles/Home.module.css";
 
-interface Props {
+interface CardProps {
   title: string;
   body: string;
   children?: ReactNode;
 }
 
-function Card({ title, body, children }: Props) {
+function Card({ title, body, children }: CardProps) {
   return (
     <div className={styles.card}>
       <h2>{title}</h2>
