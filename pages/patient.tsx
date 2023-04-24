@@ -6,8 +6,10 @@ import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
 import ActivityList from '@/components/activity-list'
+import getPatientData from '@/pages/api/testdata.js'
 
 const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Patient() {
   return (
