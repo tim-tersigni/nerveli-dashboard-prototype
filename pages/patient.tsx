@@ -1,16 +1,19 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import { useState, useEffect } from 'react';
 import styles from '@/styles/layout.module.css'
 import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
 import ActivityList from '@/components/activity-list'
-import returnPatientData from '@/pages/api/testdata'
+import clientPromise from "@/lib/mongodb";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Patient() {
+
+
+export default function Patient(patients:any) {
   
   return (
     <Layout>
@@ -26,9 +29,24 @@ export default function Patient() {
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
           </div>
+          <div>
+            <h1>Testing Patient Info</h1>
+            <p>
+                <small>(I hope this works)</small>
+            </p>
+            <ul>
+                {Array.from(patients).map((patient:any) => (
+                    <li>
+                        <h2>{patient.name}</h2>
+                        <h3>{patient.height}</h3>
+                        <p>{patient.weight}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
           <div className={styles.grid}>
             <Card title="Patient Info" body="words">
-              {returnPatientData(1, "name")}
+              {" "}
             </Card>
             <Card title="Pain Management" body="words">
               {" "}
@@ -48,4 +66,21 @@ export default function Patient() {
       </main>
     </Layout>
   )
+}
+export async function getServerSideProps() {
+  try {
+      const client = await clientPromise;
+      const db = client.db("NerveliData");
+
+      const patients = await db
+          .collection("patientinfo")
+          .find({})
+          .toArray();
+
+      return {
+          props: { patients: JSON.parse(JSON.stringify(patients)) },
+      };
+  } catch (e) {
+      console.error(e);
+  }
 }

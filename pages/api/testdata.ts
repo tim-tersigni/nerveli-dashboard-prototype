@@ -1,34 +1,32 @@
 import clientPromise from "../../lib/mongodb";
 import { useState, useEffect } from 'react';
 
-async function getPatientData(num: number, field: string): Promise<string> {
+
+export default async (req:Array<string>, res:any) => {
   try {
+      req = ["1", "name"]
       const client = await clientPromise;
       const db = client.db("NerveliData");
-
       const pi = await db
           .collection("patientinfo")
-          .find({patientnum: num})
+          .find({patientnum: +req[0]})
           .toArray();
+      const pd  = pi[0][req[1]];
 
-      var pd  = pi[0][field];
-
-      return pd;
+      res.send(pd)
   } catch (e) {
       console.error(e);
       throw e;
   }
 };
 
-function returnPatientData(num: number, field:string): String {
-  const [name, setName] = useState("");
+// function returnPatientData(num: number, field:string): String {
+//   const [name, setName] = useState("");
 
-  useEffect(() => {
-    getPatientData(num, field).then((value) => {
-      setName(value)
-    })
-  }, [])
-  return name;
-}
-
-export default returnPatientData;
+//   useEffect(() => {
+//     (num, field).then((value) => {
+//       setName(value)
+//     })
+//   }, [])
+//   return name;
+// }
