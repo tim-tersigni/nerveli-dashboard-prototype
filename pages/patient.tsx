@@ -6,12 +6,12 @@ import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
 import ActivityList from '@/components/activity-list'
-import getPatientData from '@/pages/api/testdata.js'
+import returnPatientData from '@/pages/api/testdata'
 
 const inter = Inter({ subsets: ['latin'] })
 
-
 export default function Patient() {
+  
   return (
     <Layout>
       <Head>
@@ -28,7 +28,7 @@ export default function Patient() {
           </div>
           <div className={styles.grid}>
             <Card title="Patient Info" body="words">
-              {" "}
+              {returnPatientData(1, "name")}
             </Card>
             <Card title="Pain Management" body="words">
               {" "}
