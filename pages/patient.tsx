@@ -5,6 +5,7 @@ import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
 import Icon from '@/components/icon'
 import Card from '@/components/card'
+import ActivityList from '@/components/activity-list'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,9 +37,7 @@ export default function Patient() {
             <Card title="Medication" body="words">
               {" "}
             </Card>
-            <Card title="Recent Activities" body="words">
-              {" "}
-            </Card>
+            <ActivityList/>
             <Card title="Physical Management" body="words">
               {" "}
             </Card>
