@@ -1,9 +1,10 @@
 .card {
-  padding: 0 1.2rem 1rem;
+  padding: 0 0.5rem 0.5rem 0;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 1);
   border: 1px solid rgba(var(--card-border-rgb), 0);
   transition: background 200ms, border 200ms;
+  width: 200px;
 }
 
 .card span {
@@ -14,7 +15,7 @@
 .card h2 {
   font-weight: 600;
   font-size: 14pt;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.2rem;
 }
 
 .card p {

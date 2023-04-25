@@ -56,9 +56,6 @@ export default function Home() {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-            <Card title="Patient Info" body="words">
-              {" "}
-            </Card>
             <PatientProfile />
 
             <Card title="Pain Management" body="words">
