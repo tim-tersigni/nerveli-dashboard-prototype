@@ -1,6 +1,8 @@
 import React, {ReactNode} from "react";
 import Card from './card'
+import ProgressBar from "./progress-bar";
 import styles from './medication-list.module.css'
+
 
 const medications = [
     {   
@@ -9,7 +11,7 @@ const medications = [
         dosage: 30,
         frequency: "twice a day",
         numTablets: 1,
-        refillsRemaining: 0
+        consistency: 75
     },
     {
         id: "2",
@@ -17,7 +19,7 @@ const medications = [
         dosage: 20,
         frequency: "daily",
         numTablets: 1,
-        refillsRemaining: 11
+        consistency: 40
 
     },
 ]
@@ -35,7 +37,7 @@ function MedicationList() {
                         {med.numTablets} {" tablet(s) "}
                         {med.frequency} 
                     </p>
-                    <div className={styles.bar}></div>
+                    <ProgressBar progress={med.consistency}/>
                 </li>
             ))}
       </ul>
