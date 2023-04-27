@@ -20,7 +20,7 @@ function PatientProfile() {
           <div className={styles.pfp}>
             <img
               className={styles.image}
-              src="/images/patientPfp.jpeg"
+              src="./images/patientPfp.jpeg"
               alt="User Profile Picture"
               height={75}
             />

@@ -1,9 +1,9 @@
 :root {
   --max-width: 1100px;
   --border-radius: 4px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;	
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
   --callout-rgb: 200, 200, 200;
   --callout-border-rgb: 172, 175, 176;
@@ -23,14 +23,14 @@ body {
 /* Remove global button styling */
 button {
   background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-  cursor:pointer;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
 }
 
 h1 {
   font-weight: 700;
-  padding: 2rem 2.2rem;
+  padding: 1rem 2rem 0 2rem;
 }

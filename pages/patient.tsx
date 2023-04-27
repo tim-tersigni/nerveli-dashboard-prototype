@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/layout.module.css'
-import Layout from '@/styles/layout'
-import Sidebar from '@/components/sidebar'
-import Icon from '@/components/icon'
-import Card from '@/components/card'
-import ActivityList from '@/components/activity-list'
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import styles from "@/styles/layout.module.css";
+import Layout from "@/styles/layout";
+import Sidebar from "@/components/sidebar";
+import PatientProfile from "@/components/patient-profile";
+import Card from "@/components/card";
+import ActivityList from "@/components/activity-list";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Patient() {
   return (
@@ -19,15 +19,13 @@ export default function Patient() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Sidebar/>
+        <Sidebar />
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-            <Card title="Patient Info" body="words">
-              {" "}
-            </Card>
+            <PatientProfile />
             <Card title="Pain Management" body="words">
               {" "}
             </Card>
@@ -37,7 +35,7 @@ export default function Patient() {
             <Card title="Medication" body="words">
               {" "}
             </Card>
-            <ActivityList/>
+            <ActivityList />
             <Card title="Physical Management" body="words">
               {" "}
             </Card>
@@ -45,5 +43,5 @@ export default function Patient() {
         </div>
       </main>
     </Layout>
-  )
+  );
 }
