@@ -8,6 +8,7 @@ import Card from '@/components/card'
 import ActivityList from '@/components/activity-list'
 import { profile } from 'console'
 import Image from 'next/image'
+import MedicationList from '@/components/medication-list'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,9 +37,7 @@ export default function Home() {
             <Card title="Overview" body="words">
               {" "}
             </Card>
-            <Card title="Medication" body="words">
-              {" "}
-            </Card>
+            <MedicationList/>
             <ActivityList/>
             <Card title="Physical Management" body="words">
               {" "}
