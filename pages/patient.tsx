@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 
-export default function Patient(patients:any) {
+export default function Patient({patients}:any) {
   
   return (
     <Layout>
@@ -35,18 +35,20 @@ export default function Patient(patients:any) {
                 <small>(I hope this works)</small>
             </p>
             <ul>
-                {Array.from(patients).map((patient:any) => (
-                    <li>
-                        <h2>{patient.name}</h2>
-                        <h3>{patient.height}</h3>
-                        <p>{patient.weight}</p>
-                    </li>
-                ))}
+                
             </ul>
         </div>
           <div className={styles.grid}>
             <Card title="Patient Info" body="words">
-              {" "}
+              {Array.from(patients).map((patient:any) => (
+                <li>
+                  <h2>Name: {patient.name}</h2>
+                  <p>Date of Birth: {patient.date_of_birth}</p>
+                  <p>Height: {patient.height} cm</p>
+                  <p>Weight: {patient.weight}kg</p>
+
+                </li>
+              ))}
             </Card>
             <Card title="Pain Management" body="words">
               {" "}
@@ -77,10 +79,13 @@ export async function getServerSideProps() {
           .find({})
           .toArray();
 
+      console.log(patients);
+
       return {
           props: { patients: JSON.parse(JSON.stringify(patients)) },
       };
   } catch (e) {
       console.error(e);
+      return { props: {} }
   }
 }
