@@ -6,7 +6,7 @@ interface Props {
 
 function ProgressBar({progress}: Props) {
     const Parentdiv = {
-        height: 2,
+        height: 10,
         width: '20%',
         backgroundColor: 'whitesmoke',
         borderRadius: 40,
@@ -16,7 +16,7 @@ function ProgressBar({progress}: Props) {
       const Childdiv = {
         height: '100%',
         width: `${progress}%`,
-        backgroundColor: "green",
+        backgroundColor: "#52CC7A",
         borderRadius:40,
         //textAlign: 'right'
       }
