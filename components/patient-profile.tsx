@@ -10,7 +10,7 @@ interface Props {
 
 function PatientProfile() {
   return (
-    <Card>
+    <Card title="">
       <div className={styles.container3}>
         <div className={styles.headergrid}>
           <h2 className={styles.h2}>Patient Info</h2>
@@ -60,5 +60,6 @@ function PatientProfile() {
     </Card>
   );
 }
+
 
 export default PatientProfile;
