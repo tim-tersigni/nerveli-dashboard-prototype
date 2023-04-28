@@ -7,6 +7,7 @@ import PatientProfile from "@/components/patient-profile";
 import Card from "@/components/card";
 import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
+import PhysicalManagementList from "@/components/physical-management";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +36,7 @@ export default function Patient() {
             </Card>
             <MedicationList />
             <ActivityList />
-            <Card title="Physical Management" body="words">
-              {" "}
-            </Card>
+            <PhysicalManagementList />
           </div>
         </div>
       </main>
