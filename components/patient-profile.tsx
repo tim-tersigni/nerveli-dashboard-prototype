@@ -3,12 +3,12 @@ import Card from "./card";
 import styles from "./patient-profle.module.css";
 
 interface Props {
-  title: string;
-  body: string;
-  children?: ReactNode;
-}
+   title: string;
+   body: string;
+   children?: ReactNode;
+ }
 
-function PatientProfile() {
+function PatientProfile({patients}:any) {
   return (
     <Card title="">
       <div className={styles.container3}>
@@ -25,26 +25,28 @@ function PatientProfile() {
               height={75}
             />
           </div>
-          <div className={styles.container3}>
-            <h3 className={styles.h3}>Firstname Lastname</h3>
-            <div className={styles.container}>
-              <div className="item">
-                <span className={styles.bold}>Age: </span>
+          {Array.from(patients).map((patient:any) => (
+            <div className={styles.container3}>
+              <h3 className={styles.h3}>{patient.name}</h3>
+              <div className={styles.container}>
+                <div className="item">
+                  <span className={styles.bold}>Age: </span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}> DOB: {patient.date_of_birth}</span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}>Sex: </span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}>Height: {patient.height} </span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}>Weight: {patient.weight} </span>
+                </div>
               </div>
-              <div className="item">
-                <span className={styles.bold}>DOB: </span>
-              </div>
-              <div className="item">
-                <span className={styles.bold}>Sex: </span>
-              </div>
-              <div className="item">
-                <span className={styles.bold}>Height: </span>
-              </div>
-              <div className="item">
-                <span className={styles.bold}>Weight: </span>
-              </div>
-            </div>
           </div>
+          ))}
         </div>
         <div className={styles.container4}>
           <div className="item">

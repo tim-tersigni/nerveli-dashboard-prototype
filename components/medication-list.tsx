@@ -7,7 +7,7 @@ import styles from './medication-list.module.css'
 const medications = [
     {   
         id: "1",
-        name: "Adderall ",
+        name: "Acetaminophen\t ",
         dosage: 30,
         frequency: "weekly",
         numTablets: 1,

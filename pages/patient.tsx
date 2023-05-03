@@ -29,20 +29,11 @@ export default function Patient({patients}:any) {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-            <PatientProfile />
-            <Card title="Pain Management" body="words">
-              {" "}
+            <PatientProfile patients={patients}/>
+            <Card title="Pain Management" body="Information about potential methods in pain management. ">
+              {"Exercises include stretching, applying pressure, going for walks"}
             </Card>
-            <Card title="Overview" body="words">
-            {Array.from(patients).map((patient:any) => (
-                <li>
-                  <h2>Name: {patient.name}</h2>
-                  <p>Date of Birth: {patient.date_of_birth}</p>
-                  <p>Height: {patient.height} cm</p>
-                  <p>Weight: {patient.weight}kg</p>
-
-                </li>
-              ))}
+            <Card title="Overview" body="Overview of Patient Information">
             </Card>
             <MedicationList />
             <ActivityList />
@@ -61,6 +52,7 @@ export async function getServerSideProps() {
       const patients = await db
           .collection("patientinfo")
           .find({})
+          .limit(1)
           .toArray();
 
       console.log(patients);
