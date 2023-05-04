@@ -1,28 +1,28 @@
 .phyList {
-    position: relative;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-    list-style: none;
-  }
-  
-  .activity {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0.5rem 0;
-    max-height: 16px;
-    border-radius: 8px;
-    justify-content: space-between;
-  }
-  
-  .activityName {
-    color: grey;
-    display: inline;
-    padding: 0 5px 0 0;
-    width: 50%;
-  }
-  
-  .progressBar {
-    width: 100%;
-  }
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.activity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+  max-height: 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+}
+
+.activityName {
+  color: grey;
+  display: inline;
+  padding: 0 5px 0 0;
+  width: 50%;
+}
+
+.progressBar {
+  width: 100%;
+}

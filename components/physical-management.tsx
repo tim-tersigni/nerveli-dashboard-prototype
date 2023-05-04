@@ -26,6 +26,8 @@ const activity = [
   },
 ];
 
+const barWidth = 80;
+
 function PhysicalManagementList() {
   return (
     <Card title="Physical Management">
@@ -35,7 +37,7 @@ function PhysicalManagementList() {
           <li key={exercise.id} className={styles.activity}>
             <div className={styles.activityName}> {exercise.name} </div>
             <div className={styles.progressBar}>
-              <ProgressBar progress={exercise.consistency} />
+              <ProgressBar width={barWidth} progress={exercise.consistency} />
             </div>
           </li>
         ))}
