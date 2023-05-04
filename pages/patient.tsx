@@ -9,11 +9,14 @@ import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
 import clientPromise from "@/lib/mongodb";
+import { BarChartComponent } from "@/angular-chartjs/src/app/bar-chart/bar-chart.component";
+import { BarChartModule } from "@/angular-chartjs/src/app/bar-chart.module";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Patient({patients}:any) {
+
   return (
     <Layout>
       <Head>
@@ -31,7 +34,7 @@ export default function Patient({patients}:any) {
           <div className={styles.grid}>
             <PatientProfile />
             <Card title="Pain Management" body="words">
-              {" "}
+            <canvas  id="MyChart" >{{  }}</canvas>
             </Card>
             <Card title="Overview" body="words">
             {Array.from(patients).map((patient:any) => (

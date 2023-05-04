@@ -17,4 +17,4 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class BarChartModule { }
