@@ -10,10 +10,9 @@ import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
 import clientPromise from "@/lib/mongodb";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Patient({patients}:any) {
+export default function Patient({ patients }: any) {
   return (
     <Layout>
       <Head>
@@ -29,12 +28,19 @@ export default function Patient({patients}:any) {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-            <PatientProfile patients={patients}/>
-            <Card title="Pain Management" body="Information about potential methods in pain management. ">
-              {"Exercises include stretching, applying pressure, going for walks"}
+            <PatientProfile patients={patients} />
+            <Card
+              title="Pain Management"
+              body="Information about potential methods in pain management. "
+            >
+              {
+                "Exercises include stretching, applying pressure, going for walks"
+              }
             </Card>
-            <Card title="Overview" body="Overview of Patient Information">
-            </Card>
+            <Card
+              title="Overview"
+              body="Overview of Patient Information"
+            ></Card>
             <MedicationList />
             <ActivityList />
             <PhysicalManagementList />
@@ -46,22 +52,22 @@ export default function Patient({patients}:any) {
 }
 export async function getServerSideProps() {
   try {
-      const client = await clientPromise;
-      const db = client.db("NerveliData");
+    const client = await clientPromise;
+    const db = client.db("NerveliData");
 
-      const patients = await db
-          .collection("patientinfo")
-          .find({})
-          .limit(1)
-          .toArray();
+    const patients = await db
+      .collection("patientinfo")
+      .find({})
+      .limit(1)
+      .toArray();
 
-      console.log(patients);
+    console.log(patients);
 
-      return {
-          props: { patients: JSON.parse(JSON.stringify(patients)) },
-      };
+    return {
+      props: { patients: JSON.parse(JSON.stringify(patients)) },
+    };
   } catch (e) {
-      console.error(e);
-      return { props: {} }
+    console.error(e);
+    return { props: {} };
   }
 }

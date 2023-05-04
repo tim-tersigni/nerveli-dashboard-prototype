@@ -13,14 +13,20 @@
   padding: 0.5rem 0;
   border-radius: 8px;
   max-height: 16px;
+  justify-content: space-between;
 }
 
 .medName {
+  flex: 1;
   font-weight: bold;
   display: inline;
+  padding: 0 5px 0 0;
 }
 
 .percentage {
   color: #52cc7a;
   display: inline-block;
+}
+.medication p {
+  text-align: left !important;
 }
