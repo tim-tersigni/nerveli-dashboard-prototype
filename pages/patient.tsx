@@ -9,6 +9,10 @@ import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
 import clientPromise from "@/lib/mongodb";
+//import BarChart from "@/components/bar-chart";
+import dynamic from 'next/dynamic'
+
+const BarChart = dynamic(() => import("@/components/bar-chart"))
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +37,7 @@ export default function Patient({ patients }: any) {
               title="Pain Management"
               body="Information about potential methods in pain management. "
             >
+              <BarChart />
               {
                 "Exercises include stretching, applying pressure, going for walks"
               }
