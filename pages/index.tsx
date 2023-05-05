@@ -3,9 +3,11 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/layout.module.css'
 import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
+import Card from "@/components/card";
+import clientPromise from "@/lib/mongodb";
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({patients}:any) {
   return (
     <Layout>
       <Head>
@@ -20,8 +22,47 @@ export default function Home() {
           <div className={styles.sectionHeader}>
             <h1>Home</h1>
           </div>
+          <Card title = "" body = "">
+          {Array.from(patients).map((patient:any) => (
+            <div className={styles.container3}>
+              <h3 className={styles.h3}>{patient.name}</h3>
+              <div className={styles.container}>
+                <div className="item">
+                  <span className={styles.bold}> DOB: {patient.date_of_birth}</span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}>Height: {patient.height} </span>
+                </div>
+                <div className="item">
+                  <span className={styles.bold}>Weight: {patient.weight} </span>
+                </div>
+              </div>
+          </div>
+          ))}
+          </Card>
         </div>
       </main>
     </Layout>
   )
+}
+
+export async function getServerSideProps() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("NerveliData");
+
+    const patients = await db
+      .collection("patientinfo")
+      .find({})
+      .toArray();
+
+    console.log(patients);
+
+    return {
+      props: { patients: JSON.parse(JSON.stringify(patients)) },
+    };
+  } catch (e) {
+    console.error(e);
+    return { props: {} };
+  }
 }
