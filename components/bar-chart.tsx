@@ -11,7 +11,7 @@ class BarChart extends Component {
 			},
 			data: [
 			{
-				// Change type to "doughnut", "line", "splineArea", etc.
+                //pain values would be pulled from the database once the ai algorithm analyzes user data. For now we will just use static values for display.
 				type: "column",
 				dataPoints: [
 					{ label: "Sunday",  y: 10, color: "#2BB673"},
