@@ -31,7 +31,7 @@ const barWidth = 80;
 function PhysicalManagementList() {
   return (
     <Card title="Physical Management">
-      <b>Current Lifestyle Changes</b>
+      <b>Weekly Lifestyle Changes</b>
       <ul className={styles.phyList}>
         {activity.map((exercise) => (
           <li key={exercise.id} className={styles.activity}>
