@@ -23,9 +23,6 @@ export default function Home() {
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Messages</h1>
-            <Card title="Bar Chart" body = "A numerical indicator of chronic pain based on the ai algorithm.">
-          <BarChart></BarChart>
-        </Card>
           </div>
         </div>
       </main>
