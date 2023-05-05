@@ -22,24 +22,26 @@ export default function Home({patients}:any) {
           <div className={styles.sectionHeader}>
             <h1>Home</h1>
           </div>
-          <Card title = "" body = "">
-          {Array.from(patients).map((patient:any) => (
-            <div className={styles.container3}>
-              <h3 className={styles.h3}>{patient.name}</h3>
-              <div className={styles.container}>
-                <div className="item">
-                  <span className={styles.bold}> DOB: {patient.date_of_birth}</span>
+          <div className={styles.grid}>
+            {Array.from(patients).map((patient:any) => (
+              <Card
+                title={patient.name}
+                children={
+                  <div className={styles.container}>
+                  <div className="item">
+                    <span className={styles.bold}> DOB: {patient.date_of_birth}</span>
+                  </div>
+                  <div className="item">
+                    <span className={styles.bold}>Height: {patient.height} </span>
+                  </div>
+                  <div className="item">
+                    <span className={styles.bold}>Weight: {patient.weight} </span>
+                  </div>
                 </div>
-                <div className="item">
-                  <span className={styles.bold}>Height: {patient.height} </span>
-                </div>
-                <div className="item">
-                  <span className={styles.bold}>Weight: {patient.weight} </span>
-                </div>
-              </div>
+                }
+              />
+            ))}
           </div>
-          ))}
-          </Card>
         </div>
       </main>
     </Layout>
