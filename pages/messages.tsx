@@ -3,7 +3,10 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/layout.module.css'
 import Layout from '@/styles/layout'
 import Sidebar from '@/components/sidebar'
+import dynamic from 'next/dynamic'
+import Card from '@/components/card'
 
+const BarChart = dynamic(() => import("@/components/bar-chart"))
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -20,6 +23,9 @@ export default function Home() {
         <div className={styles.mainContainer}>
           <div className={styles.sectionHeader}>
             <h1>Messages</h1>
+            <Card title="Bar Chart" body = "A numerical indicator of chronic pain based on the ai algorithm.">
+          <BarChart></BarChart>
+        </Card>
           </div>
         </div>
       </main>
