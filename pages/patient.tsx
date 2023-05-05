@@ -28,7 +28,7 @@ export default function Patient({ patients }: any) {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-            <PatientProfile patients={patients} />
+           <PatientProfile patients = {patients}/>
             <Card
               title="Pain Management"
               body="Information about potential methods in pain management. "
