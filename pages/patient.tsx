@@ -37,7 +37,7 @@ export default function Patient({ patients }: any) {
               title="Pain Management"
               body="Information about potential methods in pain management. "
             >
-              <BarChart />
+              <div><div><BarChart /></div></div>
               {
                 "Exercises include stretching, applying pressure, going for walks"
               }

@@ -6,6 +6,10 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class BarChart extends Component {
 	render() {
 		const options = {
+			height: 200,
+			width: 1000,
+			animationEnabled: true,
+            theme: "light2",
 			title: {
 				text: ""
 			},
