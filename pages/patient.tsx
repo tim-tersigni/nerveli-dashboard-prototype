@@ -8,6 +8,7 @@ import Card from "@/components/card";
 import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
+import Overview from "@/components/overview";
 import clientPromise from "@/lib/mongodb";
 //import BarChart from "@/components/bar-chart";
 import dynamic from "next/dynamic";
@@ -34,11 +35,8 @@ export default function Patient({ patients }: any) {
           <div className={styles.grid}>
             <div className={styles.columns}>
               <PatientProfile patients={patients} />
+              <Overview />
 
-              <Card
-                title="Overview"
-                body="Overview of Patient Information"
-              ></Card>
               <ActivityList />
             </div>
 
