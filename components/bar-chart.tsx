@@ -6,25 +6,26 @@ var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 class BarChart extends Component {
 	render() {
 		const options = {
-			height: 200,
-			width: 1000,
+			height: 250,
+			width: 750,
 			animationEnabled: true,
             theme: "light2",
 			title: {
-				text: ""
+				font: "LATO",
+				text: "4/30-5/6"
 			},
 			data: [
 			{
                 //pain values would be pulled from the database once the ai algorithm analyzes user data. For now we will just use static values for display.
 				type: "column",
 				dataPoints: [
-					{ label: "Sunday",  y: 10, color: "#2BB673"},
-					{ label: "Monday", y: 15, color: "#2BB673" },
-					{ label: "Tuesday", y: 25, color: "#2BB673"},
-					{ label: "Wednesday",  y: 90, color: "#2BB673"},
-					{ label: "Thursday",  y: 64, color: "#2BB673"},
-                    { label: "Friday",  y: 33, color: "#2BB673"},
-                    { label: "Saturday",  y: 40, color: "#2BB673"}
+					{ label: "Sunday",  y: 10,font: "LATO", color: "#c9ead4"},
+					{ label: "Monday", y: 15,font: "LATO", color: "#c9ead4" },
+					{ label: "Tuesday", y: 25, font: "LATO", color: "#c9ead4"},
+					{ label: "Wednesday",  y: 90, font: "LATO", color: "#c9ead4"},
+					{ label: "Thursday",  y: 64, font: "LATO", color: "#c9ead4"},
+                    { label: "Friday",  y: 33, font: "LATO", color: "#c9ead4"},
+                    { label: "Saturday",  y: 40, font: "LATO", color: "#c9ead4"}
 				]
 			}
 			]
