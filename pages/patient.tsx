@@ -10,9 +10,9 @@ import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
 import clientPromise from "@/lib/mongodb";
 //import BarChart from "@/components/bar-chart";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 
-const BarChart = dynamic(() => import("@/components/bar-chart"))
+const BarChart = dynamic(() => import("@/components/bar-chart"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,23 +32,34 @@ export default function Patient({ patients }: any) {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-           <PatientProfile patients = {patients}/>
-            <Card
-              title="Pain Management"
-              body="Information about potential methods in pain management. "
-            >
-              <div><div><BarChart /></div></div>
-              {
-                "Exercises include stretching, applying pressure, going for walks"
-              }
-            </Card>
-            <Card
-              title="Overview"
-              body="Overview of Patient Information"
-            ></Card>
-            <MedicationList />
-            <ActivityList />
-            <PhysicalManagementList />
+            <div className={styles.columns}>
+              <PatientProfile patients={patients} />
+
+              <Card
+                title="Overview"
+                body="Overview of Patient Information"
+              ></Card>
+              <ActivityList />
+            </div>
+
+            <div className={styles.columns}>
+              <Card
+                title="Pain Management"
+                body="Information about potential methods in pain management. "
+              >
+                <div>
+                  <div>
+                    <BarChart />
+                  </div>
+                </div>
+                {
+                  "Exercises include stretching, applying pressure, going for walks"
+                }
+              </Card>
+              <MedicationList />
+
+              <PhysicalManagementList />
+            </div>
           </div>
         </div>
       </main>
