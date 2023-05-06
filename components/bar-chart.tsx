@@ -1,13 +1,18 @@
 /* App.js */
 import React, { Component } from 'react';
+
 import CanvasJSReact from '../canvasjs.react';
+
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
+
 class BarChart extends Component {
+	
 	render() {
+		
 		const options = {
 			height: 250,
-			width: 750,
 			animationEnabled: true,
             theme: "light2",
 			title: {
@@ -30,7 +35,9 @@ class BarChart extends Component {
 			}
 			]
 		}
+		
 		return (
+			
 		<div>
 			<CanvasJSChart options = {options}
 				/* onRef={ref => this.chart = ref} */

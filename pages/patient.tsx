@@ -9,14 +9,16 @@ import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
 import clientPromise from "@/lib/mongodb";
+import dynamic from "next/dynamic";
 //import BarChart from "@/components/bar-chart";
-import dynamic from 'next/dynamic'
 
-const BarChart = dynamic(() => import("@/components/bar-chart"))
+
+const BarChart = dynamic(() => import("@/components/bar-chart"), {ssr: false});
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Patient({ patients }: any) {
+
   return (
     <Layout>
       <Head>
@@ -37,7 +39,7 @@ export default function Patient({ patients }: any) {
               title="Pain Management"
               body="Information about potential methods in pain management. "
             >
-              <div><div><BarChart /></div></div>
+              <BarChart />
               {
                 "Exercises include stretching, applying pressure, going for walks"
               }
@@ -57,6 +59,7 @@ export default function Patient({ patients }: any) {
 }
 export async function getServerSideProps() {
   try {
+    
     const client = await clientPromise;
     const db = client.db("NerveliData");
 
