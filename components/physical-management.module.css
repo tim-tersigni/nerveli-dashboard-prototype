@@ -26,3 +26,8 @@
 .progressBar {
   width: 100%;
 }
+
+.percentage {
+  color: #52cc7a;
+  display: inline-block;
+}

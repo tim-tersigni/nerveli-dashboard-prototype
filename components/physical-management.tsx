@@ -39,6 +39,12 @@ function PhysicalManagementList() {
             <div className={styles.progressBar}>
               <ProgressBar width={barWidth} progress={exercise.consistency} />
             </div>
+            <div className={styles.percentage}>
+              <p>
+                {exercise.consistency}
+                {"%"}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
