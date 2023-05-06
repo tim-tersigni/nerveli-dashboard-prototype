@@ -5,33 +5,33 @@ import styles from "./overview.module.css";
 const symptoms = [
   {
     id: "1",
-    name: "Lower Back Pain",
-    severity: "high",
-  },
-  {
-    id: "2",
-    name: "Long Hours At Desk",
-    severity: "medium",
-  },
-  {
-    id: "3",
-    name: "Lack of Sleep",
-    severity: "low",
-  },
-  {
-    id: "4",
-    name: "High stress",
-    severity: "high",
-  },
-  {
-    id: "5",
     name: "Exercises Daily",
     severity: "low",
   },
   {
-    id: "6",
-    name: "Diet",
+    id: "2",
+    name: "Healthy Diet",
+    severity: "low",
+  },
+  {
+    id: "3",
+    name: "Long Hours At Desk",
     severity: "medium",
+  },
+  {
+    id: "4",
+    name: "Lack of Sleep",
+    severity: "medium",
+  },
+  {
+    id: "5",
+    name: "High stress",
+    severity: "high",
+  },
+  {
+    id: "6",
+    name: "Lower Back Pain",
+    severity: "high",
   },
 ];
 
