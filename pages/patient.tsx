@@ -13,13 +13,13 @@ import clientPromise from "@/lib/mongodb";
 import dynamic from "next/dynamic";
 //import BarChart from "@/components/bar-chart";
 
-
-const BarChart = dynamic(() => import("@/components/bar-chart"), {ssr: false});
+const BarChart = dynamic(() => import("@/components/bar-chart"), {
+  ssr: false,
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Patient({ patients }: any) {
-
   return (
     <Layout>
       <Head>
@@ -35,23 +35,31 @@ export default function Patient({ patients }: any) {
             <h1>Patient Health Summary Dashboard</h1>
           </div>
           <div className={styles.grid}>
-           <PatientProfile patients = {patients}/>
-            <Card
-              title="Pain Management"
-              body="Information about potential methods in pain management. "
-            >
-              <BarChart />
-              {
-                "Exercises include stretching, applying pressure, going for walks"
-              }
-            </Card>
-            <Card
-              title="Overview"
-              body="Overview of Patient Information"
-            ></Card>
-            <MedicationList />
-            <ActivityList />
-            <PhysicalManagementList />
+            <div className={styles.columns}>
+              <PatientProfile patients={patients} />
+              <Overview />
+
+              <ActivityList />
+            </div>
+
+            <div className={styles.columns}>
+              <Card
+                title="Pain Management"
+                body="Information about potential methods in pain management. "
+              >
+                <div>
+                  <div>
+                    <BarChart />
+                  </div>
+                </div>
+                {
+                  "Exercises include stretching, applying pressure, going for walks"
+                }
+              </Card>
+              <MedicationList />
+
+              <PhysicalManagementList />
+            </div>
           </div>
         </div>
       </main>
@@ -60,7 +68,6 @@ export default function Patient({ patients }: any) {
 }
 export async function getServerSideProps() {
   try {
-    
     const client = await clientPromise;
     const db = client.db("NerveliData");
 
