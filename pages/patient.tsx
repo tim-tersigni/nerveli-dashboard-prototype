@@ -8,6 +8,7 @@ import Card from "@/components/card";
 import ActivityList from "@/components/activity-list";
 import MedicationList from "@/components/medication-list";
 import PhysicalManagementList from "@/components/physical-management";
+import Overview from "@/components/overview";
 import clientPromise from "@/lib/mongodb";
 import dynamic from "next/dynamic";
 //import BarChart from "@/components/bar-chart";

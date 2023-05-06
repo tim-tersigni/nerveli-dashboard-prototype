@@ -47,6 +47,6 @@ class BarChart extends Component {
 		);
 	}
 }
-module.exports = BarChart;    
+module.exports = BarChart;
 
 export default BarChart;
